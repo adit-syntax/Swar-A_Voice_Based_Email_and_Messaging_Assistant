@@ -1,0 +1,11 @@
+streamlit
+opencv-python
+deepface
+SpeechRecognition
+pyaudio
+pyttsx3
+pandas
+numpy
+tf-keras
+pillow
+google-generativeai

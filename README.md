@@ -1,73 +1,51 @@
-# Welcome to your Lovable project
+# Swar - Hands-Free Voice Assistant
+**Project State**: Completed
+**Tech Stack**: Streamlit, DeepFace, SpeechRecognition, Gmail API
 
-## Project info
+## Overview
+Swar is a fully strictly hands-free email and messaging assistant. It uses Face Recognition for secure, touch-free login and Voice Commands for navigating and managing emails.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## 🚀 How to Run
 
-## How can I edit this code?
+### 1. Prerequisites
+- **Python 3.10+**
+- **Webcam**
+- **Microphone**
 
-There are several ways of editing your application.
+### 2. Installation
+Open your terminal in this directory:
+```bash
+# Create virtual environment (Optional)
+python -m venv .venv
+.venv\Scripts\activate
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+# Install Dependencies
+pip install -r requirements.txt
 ```
 
-**Edit a file directly in GitHub**
+### 3. Running the App
+```bash
+streamlit run app.py
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🎙️ Hands-Free Usage Guide
 
-**Use GitHub Codespaces**
+### 1. Login
+- **Scanning**: Look at the camera. The "Live Preview" will show you are being scanned.
+- **PIN**: If recognized, say your 4-digit PIN (e.g., "One Two Three Four").
+- **Register**: If not recognized, say "Yes" to register. Follow voice prompts for Name, Email, and PIN.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### 2. Inbox Dashboard
+Wait for the "Listening" status.
+- **"Refresh"**: Load emails.
+- **"Read Email One"**: Open the first email.
+- **"Next" / "Previous"**: Navigate list.
+- **"Read Body"**: Listen to email content.
+- **"Reply"**: Reply to the open email.
+- **"Logout"**: Return to login.
 
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+### 3. Creating Emails
+- **"Compose"**: Start a new email.
+- **"Set Recipient"**: Say the address.
+- **"Dictate Body"**: Speak the message.
+- **"Send"**: Send it.
