@@ -3,6 +3,10 @@ import time
 import threading
 import re
 from utils import voice, auth, db, email_manager, nlu
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
 
 # --- PAGE CONFIG ---
 st.set_page_config(page_title="Swar Voice Assistant", layout="wide", page_icon="🎙️")
@@ -43,8 +47,14 @@ if 'compose_stage' not in st.session_state: st.session_state.compose_stage = 'in
 @st.cache_resource
 def init_resources():
     db.init_db()
-    HARDCODED_KEY = "REMOVED_API_KEY"
-    nlu.configure_genai(HARDCODED_KEY)
+
+    api_key = os.getenv("GOOGLE_API_KEY")
+
+    if not api_key:
+        raise ValueError("GOOGLE_API_KEY not found in environment")
+
+    nlu.configure_genai(api_key)
+
 
 init_resources()
 
